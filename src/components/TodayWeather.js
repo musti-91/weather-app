@@ -24,14 +24,6 @@ var images = {
 export const TodayWeather = props => {
   let min = props.todayWeather.main.temp_min;
   let max = props.todayWeather.main.temp_max;
-
-  // const getImage = () => {
-  //   const icon = props.todayWeather.weather[0].icon;
-  //   for (const image of Object.keys(images)) {
-  //     if (image === icon) return images[image];
-  //   }
-  // };
-
   return (
     <div>
       <div className="imageContainer">

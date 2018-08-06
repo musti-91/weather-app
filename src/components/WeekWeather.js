@@ -25,25 +25,25 @@ var images = {
 export const WeekWeather = props => {
   const getWeekWeather = () => {
     const weekWeather = [];
-    for (let i = 0; i < props.list.length; i++) {
-      if (i % 5 === 0) {
-        if (
-          props.list[i].dt_txt.substring(7, 10) ===
-          props.list[i + 1].dt_txt.substring(7, 10)
-        ) {
-          weekWeather.push(props.list[i]);
-        }
+    let length = props.list.length;
+    let previous = null;
+    let next = null;
+    for (let i = 0; i < length; i++) {
+      previous = props.list[i].dt_txt.substring(8, 10);
+      next = props.list[i++].dt_txt.substring(8, 10);
+      if (next === previous) {
+        weekWeather.push(props.list[i]);
       }
     }
     return weekWeather;
   };
+
   return (
     <div>
       <ul className="daysContent">
         {getWeekWeather().map((day, index) => (
           <li key={index}>
             <div>
-              {console.log(day)}
               <span>{moment.unix(day.dt).format("dddd")}</span>
             </div>
             <div>

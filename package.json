@@ -13,7 +13,7 @@
     "semantic-ui-react": "0.82.0"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar src/css/index.scss -o src/",
+    "build-css": "node-sass-chokidar  src/css/index.scss -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/css/index.scss -o src/ --watch --recursive",
     "start": "react-scripts start",
     "build": "react-scripts build",

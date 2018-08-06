@@ -12,7 +12,7 @@ class App extends Component {
   componentDidMount() {
     axios
       .get(
-        "https://api.openweathermap.org/data/2.5/forecast?q=kontich,be&mode=json&appid="
+        "https://api.openweathermap.org/data/2.5/forecast?q=kontich,be&mode=json&appid=42712e3ffbeb463082824a09a370bd6c"
       )
       .then(response => {
         this.setState({
