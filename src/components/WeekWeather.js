@@ -23,16 +23,24 @@ var images = {
   "50n": require("../images/50n.png")
 };
 export const WeekWeather = props => {
+  const convertDay = day => {
+    return moment.unix(day).format("dddd");
+  };
   const getWeekWeather = () => {
     const weekWeather = [];
     let length = props.list.length;
-    let previous = null;
-    let next = null;
     for (let i = 0; i < length; i++) {
-      previous = props.list[i].dt_txt.substring(8, 10);
-      next = props.list[i++].dt_txt.substring(8, 10);
-      if (next === previous) {
-        weekWeather.push(props.list[i]);
+      let previousDay = props.list[i];
+      let limmit = i + 1;
+      let nextDay = null;
+      if (limmit < props.list.length) {
+        nextDay = props.list[limmit];
+      } else {
+        nextDay = props.list[props.list.length - 1];
+      }
+      console.log(nextDay);
+      if (convertDay(previousDay.dt) !== convertDay(nextDay.dt)) {
+        weekWeather.push(previousDay);
       }
     }
     return weekWeather;
