@@ -10,7 +10,7 @@
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4",
     "semantic-ui-css": "2.3.2",
-    "semantic-ui-react": "0.82.0"
+    "semantic-ui-react": "0.87.3"
   },
   "scripts": {
     "build-css": "node-sass-chokidar  src/css/index.scss -o src/",
